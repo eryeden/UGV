@@ -3,6 +3,9 @@ PROJECT(UGV)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 ENABLE_LANGUAGE(ASM)
 
+#For auto-complete
+SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 INCLUDE(CMakeForceCompiler)
 
 IF(NOT TOOLCHAIN_PREFIX)
@@ -47,8 +50,9 @@ set(BSP_CMSIS "${ROOT_STM32CUBE}/Drivers/BSP/STM32F4xx-Nucleo")
 set(LINKER_SCRIPT_STM32F401 "STM32F401CE_FLASH.ld")
 set(STARTUP_STM32F401 "startup_stm32f401xe.s")
 
-set(STM32_COMPILEOPTIONS "-Wall -mcpu=cortex-m4 -mlittle-endian -mthumb -DSTM32F401xE -O1")
-set(STM32_LINKOPTIONS "-mcpu=cortex-m4 -mlittle-endian -mthumb -DSTM32F401xE")
+#--specs=nosys.specsを入れないとレファレンス出る。_exit等
+set(STM32_COMPILEOPTIONS "-g -Wall -mcpu=cortex-m4 -mlittle-endian -mthumb -DSTM32F401xE -O1 --specs=nosys.specs")
+set(STM32_LINKOPTIONS "-g -mcpu=cortex-m4 -mlittle-endian -mthumb -DSTM32F401xE")
 
 SET(DIR_SOURCE "${PROJECT_SOURCE_DIR}/src")
 SET(DIR_INCLUDE "${PROJECT_SOURCE_DIR}/inc")
@@ -170,8 +174,12 @@ SET(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS)
 
 set(SRCS
   ${DIR_SOURCE}/main.cpp
-  ${DIR_SOURCE}/system.c
+  ${DIR_SOURCE}/Clock.c
+  ${DIR_SOURCE}/system_stm32f4xx.c
   ${DIR_SOURCE}/${STARTUP_STM32F401}
+  ${DIR_SOURCE}/stm32f4xx_hal_msp.c
+  ${DIR_SOURCE}/stm32f4xx_it.c
+  ${DIR_SOURCE}/stm32f4xx_nucleo.c
   )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
