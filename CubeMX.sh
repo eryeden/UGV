@@ -1,3 +1,3 @@
 #!/bin/bash
-PATH="/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX"
-/usr/bin/java -cp ${PATH} com.st.microxplorer.maingui.IOConfigurator
+PATH2CUBEMX="/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX"
+java -cp ${PATH2CUBEMX} com.st.microxplorer.maingui.IOConfigurator
