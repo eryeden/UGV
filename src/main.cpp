@@ -1,10 +1,42 @@
 extern "C"{
 #include "Clock.h"
-#include "stm32f4xx_nucleo.h"
 }
 
 //EXTERNCはヘッダファイル群にてすでに記述済なので囲む必要はない
 #include "main.h"
+#include "stm32f4xx_nucleo.h"
+
+/*
+  Target board: STM32F401RET6U
+  Up to 84 MHz
+  DSP?
+  Single precision FPU
+  512 KB : Flash memory
+  96 KB  : SRAM
+  Buses:
+        2 * APB
+        2 * AHB
+        32bit multi-AHB
+  one more 12bit-ADC : 16 channels
+  RTC
+  general-purpose timers 16-bit * 6
+                         32-bit * 2
+  PWM timer for motor control * 1
+
+  Clock, reset and supply management
+  1.7 V to 3.6 V application supply and I/Os
+  POR, PDR, PVD and BOR
+  4-to-26 MHz crystal oscillator
+  Internal 16 MHz factory-trimmed RC
+  32 kHz oscillator for RTC with calibration
+  Internal 32 kHz RC with calibration
+
+  General-purpose DAM 16-stream
+
+  http://www.st.com/web/jp/catalog/mmc/SC1169/SS1577/LN1810
+  
+ */
+
 
 int main(void)
 {

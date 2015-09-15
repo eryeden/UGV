@@ -11,6 +11,11 @@
 },
 {
   "directory": "/home/ery/local_devel/UGV",
+  "command": "/usr/bin/arm-none-eabi-g++      -g -Wall -mcpu=cortex-m4 -mlittle-endian -mthumb -DSTM32F401xE -O1 --specs=nosys.specs -I/home/ery/local_devel/UGV -I/home/ery/local_devel/UGV/inc -I/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0/Drivers/CMSIS/Include -I/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0/Drivers/STM32F4xx_HAL_Driver/Inc    -o CMakeFiles/UGV.dir/src/stm32f4_tests.cpp.o -c /home/ery/local_devel/UGV/src/stm32f4_tests.cpp",
+  "file": "/home/ery/local_devel/UGV/src/stm32f4_tests.cpp"
+},
+{
+  "directory": "/home/ery/local_devel/UGV",
   "command": "/usr/bin/arm-none-eabi-gcc    -g -Wall -mcpu=cortex-m4 -mlittle-endian -mthumb -DSTM32F401xE -O1 --specs=nosys.specs -I/home/ery/local_devel/UGV -I/home/ery/local_devel/UGV/inc -I/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0/Drivers/CMSIS/Include -I/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0/Drivers/STM32F4xx_HAL_Driver/Inc    -o CMakeFiles/UGV.dir/src/system_stm32f4xx.c.o   -c /home/ery/local_devel/UGV/src/system_stm32f4xx.c",
   "file": "/home/ery/local_devel/UGV/src/system_stm32f4xx.c"
 },

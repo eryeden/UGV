@@ -175,6 +175,7 @@ SET(CMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS)
 set(SRCS
   ${DIR_SOURCE}/main.cpp
   ${DIR_SOURCE}/Clock.c
+  ${DIR_SOURCE}/stm32f4_tests.cpp
   ${DIR_SOURCE}/system_stm32f4xx.c
   ${DIR_SOURCE}/${STARTUP_STM32F401}
   ${DIR_SOURCE}/stm32f4xx_hal_msp.c
