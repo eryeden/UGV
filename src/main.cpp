@@ -37,6 +37,43 @@ extern "C"{
   
  */
 
+/*
+  ClockSource: HSI clock 16 MHz
+  *            System Clock source            = PLL (HSI)
+  *            SYSCLK(Hz)                     = 84000000
+  *            HCLK(Hz)                       = 84000000
+  *            AHB Prescaler                  = 1
+  *            APB1 Prescaler                 = 2
+  *            APB2 Prescaler                 = 1
+  *            HSI Frequency(Hz)              = 16000000
+  *            PLL_M                          = 16
+  *            PLL_N                          = 336
+  *            PLL_P                          = 4
+  *            PLL_Q                          = 7
+  *            VDD(V)                         = 3.3
+  *            Main regulator output voltage  = Scale2 mode
+  *            Flash Latency(WS)              = 2 
+ */
+
+/*
+  実装すべき機能
+
+  モーター　４個
+    →PWM出力　８CH
+
+  DMAコントローラの使用
+    UARTによる通信
+    太陽電池電圧監視
+    ポテンショメータ入力
+    磁気式エンコーダSPI通信
+    IMUユニットSPI　OR　I2C通信
+
+  その他インジケータ出力用GPIO
+
+  ジンバル制御割り込み
+  
+ */
+
 
 int main(void)
 {
