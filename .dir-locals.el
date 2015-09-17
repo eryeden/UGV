@@ -24,7 +24,31 @@
 
 ;;; Code:
 
-(defvar gud-gdb-command-name "arm-none-linux-gnueabi-gdb")
-(add-dir-local-variable gud-gdb-command-name "arm-none-linux-gnueabi-gdb --annotate=3")
+;;(defvar gud-gdb-command-name "arm-none-linux-gnueabi-gdb")
+
+;;(add-dir-local-variable (gud-gdb-command-name . "arm-none-eabi-gdb -i=mi"))
+;;(dir-locals-set-class-variables gud-gdb-command-name "arm-none-eabi-gdb -i=mi")
+
+;;(message "SET DIR VARIABLES")
+
+;;(gdb-mode . ((gud-gdb-command-name . "arm-none-eabi-gdb"))
+
+(
+ (nil . (
+         (gud-gdb-command-name . "arm-none-eabi-gdb -i=mi -x /home/ery/local_devel/UGV/gdb_commandfile")
+         )
+      )
+ (c++-mode . (
+              (compile-command . "make -C /home/ery/local_devel/UGV/build")
+              )
+          )
+ (c-mode . (
+            (compile-command . "make -C /home/ery/local_devel/UGV/build")
+            )
+         )
+ )
+
+
+;;(message "GDB MODE SET")
 
 ;;; .dir-locals.el ends here

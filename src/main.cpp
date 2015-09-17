@@ -5,6 +5,7 @@ extern "C"{
 //EXTERNCはヘッダファイル群にてすでに記述済なので囲む必要はない
 #include "main.h"
 #include "stm32f4xx_nucleo.h"
+#include "stm32f4_tests.hpp"
 
 /*
   Target board: STM32F401RET6U
@@ -74,6 +75,14 @@ extern "C"{
   
  */
 
+/*
+  NUCLEOボードについて
+  B1(User button) -> PC13
+
+  LED2(LD2) -> PA5
+
+ */
+
 
 int main(void)
 {
@@ -88,23 +97,15 @@ int main(void)
       - Low Level Initialization
    */
    HAL_Init();
-   
         
    /* Configure the System clock to 84 MHz */
    SystemClock_Config();
 
-   //LED initialization
-   BSP_LED_Init(LED2);
-//   BSP_LED_Init(LED3);
+   gpio_init();
+   
+   gpio_execute();
+   
 
-   long i = 0;
-   while (1){
-      BSP_LED_Toggle(LED2);
-      for(i = 0; i < 0xFFFFFF; i++){
-         ;
-      }
-//      BSP_LED_On(LED3);
-   }
 }
 
 #ifdef  USE_FULL_ASSERT

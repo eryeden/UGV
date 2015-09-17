@@ -29,10 +29,23 @@
 
 
 void gpio_init(){
+   //Enable GPIOA clock
+   __HAL_RCC_GPIOA_CLK_ENABLE();
+
+   GPIO_InitTypeDef gpio_initstruct;
+
+   gpio_initstruct.Pin = GPIO_PIN_5;
+   gpio_initstruct.Mode = GPIO_MODE_OUTPUT_PP;
+   gpio_initstruct.Pull = GPIO_PULLUP;
+   gpio_initstruct.Speed = GPIO_SPEED_FAST;
+   HAL_GPIO_Init(GPIOA, &gpio_initstruct);
    
 }
 
 void gpio_execute(){
-   
+   while(1){
+      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+      HAL_Delay(1000);
+   }
 }
 
