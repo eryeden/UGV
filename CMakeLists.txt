@@ -93,6 +93,7 @@ SET(HAL_SRCS
   stm32f4xx_hal.c
   )
 
+
 #使用コンポーネントの設定がなければすべてのコンポーネントを使用する
 IF(NOT STM32HAL_FIND_COMPONENTS)
   SET(STM32HAL_FIND_COMPONENTS ${HAL_COMPONENTS})
