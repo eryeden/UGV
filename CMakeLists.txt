@@ -44,7 +44,9 @@ SET(CMAKE_OBJDUMP arm-none-eabi-objdump CACHE INTERNAL "objdump tool")
 #SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 set(TARGET_STM32 "stm32f401")
-set(ROOT_STM32CUBE "/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0")
+# Use STM32CUBE MX repository
+set(ROOT_STM32CUBE "$ENV{HOME}/STM32Cube/Repository/STM32Cube_FW_F4_V1.10.0")
+#set(ROOT_STM32CUBE "/home/ery/dev/STM32F4/STM32Cube_FW_F4_V1.7.0")
 set(DEVICE_CMSIS "${ROOT_STM32CUBE}/Drivers/CMSIS/Device/ST/STM32F4xx/Include")
 set(CORE_CMSIS "${ROOT_STM32CUBE}/Drivers/CMSIS/Include")
 set(HAL_CMSIS_INC "${ROOT_STM32CUBE}/Drivers/STM32F4xx_HAL_Driver/Inc")
