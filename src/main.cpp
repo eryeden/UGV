@@ -104,7 +104,6 @@ int main(void)
    gpio_init();
    
    gpio_execute();
-   
 
 }
 
