@@ -33,6 +33,7 @@
 
 #Emacs files
 *~
+#*#
 
 #CMake files
 CMakeCache.txt
@@ -44,3 +45,6 @@ install_manifest.txt
 
 #Build directories
 build
+
+
+
